@@ -1,0 +1,1060 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions 	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+					xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+					xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" 
+					xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+					xmlns:tns="http://www.ms3commerce.at/API/V2/service/V4.8.0" 
+					targetNamespace="http://www.ms3commerce.at/API/V2/service/V4.8.0"
+					name="asimCommerceAPIV2">
+	
+	
+	<!-- ******************************** Types ********************************* -->
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://www.ms3commerce.at/API/V2/service/V4.8.0" elementFormDefault="qualified" >
+			<xsd:include schemaLocation="../schema/dataConnectorTypes.xsd"/>
+			<xsd:include schemaLocation="../schema/dataConnectorMessages.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	
+
+	<!-- ********************************  Messages ********************************* -->	
+	<!-- getShopRoot -->
+    <wsdl:message name="ShopRootRequestMsg">
+        <wsdl:part name="parameters" element="tns:getShopRoot"/>
+    </wsdl:message>
+    <wsdl:message name="ShopRootResponseMsg">
+        <wsdl:part name="parameters" element="tns:getShopRootResponse"/>
+    </wsdl:message>
+    <wsdl:message name="ShopRootForLangAndMarketRequestMsg">
+        <wsdl:part name="parameters" element="tns:getShopRootForLangAndMarket"/>
+    </wsdl:message>
+    <wsdl:message name="ShopRootForLangAndMarketResponseMsg">
+        <wsdl:part name="parameters" element="tns:getShopRootForLangAndMarketResponse"/>
+    </wsdl:message>
+	<wsdl:message name="ShopRootListRequestMsg">
+		<wsdl:part name="parameters" element="tns:getShopRootList"/>
+	</wsdl:message>
+	<wsdl:message name="ShopRootListResponseMsg">
+		<wsdl:part name="parameters" element="tns:getShopRootListResponse"/>
+	</wsdl:message>
+    
+    <!-- getGroupChildren -->
+    <wsdl:message name="GetGroupChildrenRequestMsg">
+		<wsdl:part name="parameters" element="tns:getGroupChildren"/>
+    </wsdl:message>
+    <wsdl:message name="GetGroupChildrenResponseMsg">
+		<wsdl:part name="parameters" element="tns:getGroupChildrenResponse"/>
+    </wsdl:message>
+    
+    <!-- getGroupContent -->
+	<wsdl:message name="GetGroupContentRequestMsg">
+		<wsdl:part name="parameters" element="tns:getGroupContent"/>
+	</wsdl:message>
+	<wsdl:message name="GetGroupContentResponseMsg">
+		<wsdl:part name="parameters" element="tns:getGroupContentResponse"/>
+	</wsdl:message>
+	 <wsdl:message name="GetGroupContentBySMZRequestMsg">
+		<wsdl:part name="parameters" element="tns:getGroupContentBySMZ"/>
+	</wsdl:message>
+	<wsdl:message name="GetGroupContentBySMZResponseMsg">
+		<wsdl:part name="parameters" element="tns:getGroupContentBySMZResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetGroupContentBySMListRequestMsg">
+		<wsdl:part name="parameters" element="tns:getGroupContentBySMList"/>
+	</wsdl:message>
+	<wsdl:message name="GetGroupContentBySMListResponseMsg">
+		<wsdl:part name="parameters" element="tns:getGroupContentBySMListResponse"/>
+	</wsdl:message>
+
+	<!-- getGroupTree -->
+	<wsdl:message name="GetGroupTreeRequestMsg">
+		<wsdl:part name="parameters" element="tns:getGroupTree"/>
+	</wsdl:message>
+	<wsdl:message name="GetGroupTreeResponseMsg">
+		<wsdl:part name="parameters" element="tns:getGroupTreeResponse"/>
+	</wsdl:message>
+	
+	<!-- getGroupFeature -->
+	<wsdl:message name="GetGroupFeatureRequestMsg">
+		<wsdl:part name="parameters" element="tns:getGroupFeature"/>
+	</wsdl:message>
+	<wsdl:message name="GetGroupFeatureResponseMsg">
+		<wsdl:part name="parameters" element="tns:getGroupFeatureResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetGroupFeatureBySMZRequestMsg">
+		<wsdl:part name="parameters" element="tns:getGroupFeatureBySMZ"/>
+	</wsdl:message>
+	<wsdl:message name="GetGroupFeatureBySMZResponseMsg">
+		<wsdl:part name="parameters" element="tns:getGroupFeatureBySMZResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetGroupFeatureBySMZTypeRequestMsg">
+		<wsdl:part name="parameters" element="tns:getGroupFeatureBySMZType"/>
+	</wsdl:message>
+	<wsdl:message name="GetGroupFeatureBySMZTypeResponseMsg">
+		<wsdl:part name="parameters" element="tns:getGroupFeatureBySMZTypeResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetGroupFeatureBySMListRequestMsg">
+		<wsdl:part name="parameters" element="tns:getGroupFeatureBySMList"/>
+	</wsdl:message>
+	<wsdl:message name="GetGroupFeatureBySMListResponseMsg">
+		<wsdl:part name="parameters" element="tns:getGroupFeatureBySMListResponse"/>
+	</wsdl:message>
+	
+	<!-- getGroupListFeature -->
+	<wsdl:message name="GetGroupListFeatureRequestMsg">
+		<wsdl:part name="parameters" element="tns:getGroupListFeature"/>
+	</wsdl:message>
+	<wsdl:message name="GetGroupListFeatureResponseMsg">
+		<wsdl:part name="parameters" element="tns:getGroupListFeatureResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetGroupListFeatureBySMZRequestMsg">
+		<wsdl:part name="parameters" element="tns:getGroupListFeatureBySMZ"/>
+	</wsdl:message>
+	<wsdl:message name="GetGroupListFeatureBySMZResponseMsg">
+		<wsdl:part name="parameters" element="tns:getGroupListFeatureBySMZResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetGroupListFeatureBySMListRequestMsg">
+		<wsdl:part name="parameters" element="tns:getGroupListFeatureBySMList"/>
+	</wsdl:message>
+	<wsdl:message name="GetGroupListFeatureBySMListResponseMsg">
+		<wsdl:part name="parameters" element="tns:getGroupListFeatureBySMListResponse"/>
+	</wsdl:message>
+	
+	<!-- getProductFeature -->
+	<wsdl:message name="GetProductFeatureRequestMsg">
+		<wsdl:part name="parameters" element="tns:getProductFeature"/>
+	</wsdl:message>
+	<wsdl:message name="GetProductFeatureResponseMsg">
+		<wsdl:part name="parameters" element="tns:getProductFeatureResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetProductFeatureBySMZRequestMsg">
+		<wsdl:part name="parameters" element="tns:getProductFeatureBySMZ"/>
+	</wsdl:message>
+	<wsdl:message name="GetProductFeatureBySMZResponseMsg">
+		<wsdl:part name="parameters" element="tns:getProductFeatureBySMZResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetProductFeatureBySMZTypeRequestMsg">
+		<wsdl:part name="parameters" element="tns:getProductFeatureBySMZType"/>
+	</wsdl:message>
+	<wsdl:message name="GetProductFeatureBySMZTypeResponseMsg">
+		<wsdl:part name="parameters" element="tns:getProductFeatureBySMZTypeResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetProductFeatureBySMListRequestMsg">
+		<wsdl:part name="parameters" element="tns:getProductFeatureBySMList"/>
+	</wsdl:message>
+	<wsdl:message name="GetProductFeatureBySMListResponseMsg">
+		<wsdl:part name="parameters" element="tns:getProductFeatureBySMListResponse"/>
+	</wsdl:message>
+
+	<!-- getProductListFeature -->
+	<wsdl:message name="GetProductListFeatureRequestMsg">
+		<wsdl:part name="parameters" element="tns:getProductListFeature"/>
+	</wsdl:message>
+	<wsdl:message name="GetProductListFeatureResponseMsg">
+		<wsdl:part name="parameters" element="tns:getProductListFeatureResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetProductListFeatureBySMZRequestMsg">
+		<wsdl:part name="parameters" element="tns:getProductListFeatureBySMZ"/>
+	</wsdl:message>
+	<wsdl:message name="GetProductListFeatureBySMZResponseMsg">
+		<wsdl:part name="parameters" element="tns:getProductListFeatureBySMZResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetProductListFeatureBySMListRequestMsg">
+		<wsdl:part name="parameters" element="tns:getProductListFeatureBySMList"/>
+	</wsdl:message>
+	<wsdl:message name="GetProductListFeatureBySMListResponseMsg">
+		<wsdl:part name="parameters" element="tns:getProductListFeatureBySMListResponse"/>
+	</wsdl:message>
+	
+	<!-- getDocumentFeature -->
+	<wsdl:message name="GetDocumentFeatureRequestMsg">
+		<wsdl:part name="parameters" element="tns:getDocumentFeature"/>
+	</wsdl:message>
+	<wsdl:message name="GetDocumentFeatureResponseMsg">
+		<wsdl:part name="parameters" element="tns:getDocumentFeatureResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetDocumentFeatureBySMZRequestMsg">
+		<wsdl:part name="parameters" element="tns:getDocumentFeatureBySMZ"/>
+	</wsdl:message>
+	<wsdl:message name="GetDocumentFeatureBySMZResponseMsg">
+		<wsdl:part name="parameters" element="tns:getDocumentFeatureBySMZResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetDocumentFeatureBySMListRequestMsg">
+		<wsdl:part name="parameters" element="tns:getDocumentFeatureBySMList"/>
+	</wsdl:message>
+	<wsdl:message name="GetDocumentFeatureBySMListResponseMsg">
+		<wsdl:part name="parameters" element="tns:getDocumentFeatureBySMListResponse"/>
+	</wsdl:message>
+	
+	<!-- getDocumentListFeature -->
+	<wsdl:message name="GetDocumentListFeatureRequestMsg">
+		<wsdl:part name="parameters" element="tns:getDocumentListFeature"/>
+	</wsdl:message>
+	<wsdl:message name="GetDocumentListFeatureResponseMsg">
+		<wsdl:part name="parameters" element="tns:getDocumentListFeatureResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetDocumentListFeatureBySMZRequestMsg">
+		<wsdl:part name="parameters" element="tns:getDocumentListFeatureBySMZ"/>
+	</wsdl:message>
+	<wsdl:message name="GetDocumentListFeatureBySMZResponseMsg">
+		<wsdl:part name="parameters" element="tns:getDocumentListFeatureBySMZResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetDocumentListFeatureBySMListRequestMsg">
+		<wsdl:part name="parameters" element="tns:getDocumentListFeatureBySMList"/>
+	</wsdl:message>
+	<wsdl:message name="GetDocumentListFeatureBySMListResponseMsg">
+		<wsdl:part name="parameters" element="tns:getDocumentListFeatureBySMListResponse"/>
+	</wsdl:message>
+	
+	<!-- getSMZ -->
+	<wsdl:message name="GetSMZRequestMsg">
+		<wsdl:part name="parameters" element="tns:getSMZ"/>
+	</wsdl:message>
+	<wsdl:message name="GetSMZResponseMsg">
+		<wsdl:part name="parameters" element="tns:getSMZResponse"/>
+	</wsdl:message>
+	
+	<!-- getSMZNameByType -->
+	<wsdl:message name="GetSMZNameByTypeRequestMsg">
+		<wsdl:part name="parameters" element="tns:getSMZNameByType"/>
+	</wsdl:message>
+	<wsdl:message name="GetSMZNameByTypeResponseMsg">
+		<wsdl:part name="parameters" element="tns:getSMZNameByTypeResponse"/>
+	</wsdl:message>
+	
+	<!-- getSMZByType -->
+	<wsdl:message name="GetSMZByTypeRequestMsg">
+		<wsdl:part name="parameters" element="tns:getSMZByType"/>
+	</wsdl:message>
+	<wsdl:message name="GetSMZByTypeResponseMsg">
+		<wsdl:part name="parameters" element="tns:getSMZByTypeResponse"/>
+	</wsdl:message>
+	
+	<!-- getGroupRelations -->
+	<wsdl:message name="GetGroupRelationsRequestMsg">
+		<wsdl:part name="parameters" element="tns:getGroupRelations"/>
+	</wsdl:message>
+	<wsdl:message name="GetGroupRelationsResponseMsg">
+		<wsdl:part name="parameters" element="tns:getGroupRelationsResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetGroupRelationsForNameRequestMsg">
+		<wsdl:part name="parameters" element="tns:getGroupRelationsForName"/>
+	</wsdl:message>
+	<wsdl:message name="GetGroupRelationsForNameResponseMsg">
+		<wsdl:part name="parameters" element="tns:getGroupRelationsForNameResponse"/>
+	</wsdl:message>
+	
+	<!-- getProductRelations -->
+	<wsdl:message name="GetProductRelationsRequestMsg">
+		<wsdl:part name="parameters" element="tns:getProductRelations"/>
+	</wsdl:message>
+	<wsdl:message name="GetProductRelationsResponseMsg">
+		<wsdl:part name="parameters" element="tns:getProductRelationsResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetProductRelationsForNameRequestMsg">
+		<wsdl:part name="parameters" element="tns:getProductRelationsForName"/>
+	</wsdl:message>
+	<wsdl:message name="GetProductRelationsForNameResponseMsg">
+		<wsdl:part name="parameters" element="tns:getProductRelationsForNameResponse"/>
+	</wsdl:message>
+	
+	<!-- getDocumentRelations -->
+	<wsdl:message name="GetDocumentRelationsRequestMsg">
+		<wsdl:part name="parameters" element="tns:getDocumentRelations"/>
+	</wsdl:message>
+	<wsdl:message name="GetDocumentRelationsResponseMsg">
+		<wsdl:part name="parameters" element="tns:getDocumentRelationsResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetDocumentRelationsForNameRequestMsg">
+		<wsdl:part name="parameters" element="tns:getDocumentRelationsForName"/>
+	</wsdl:message>
+	<wsdl:message name="GetDocumentRelationsForNameResponseMsg">
+		<wsdl:part name="parameters" element="tns:getDocumentRelationsForNameResponse"/>
+	</wsdl:message>
+	
+    <!-- searchProduct -->
+    <wsdl:message name="SearchProductRequestMsg">
+		<wsdl:part name="parameters" element="tns:searchProduct"/>
+    </wsdl:message>
+    <wsdl:message name="SearchProductResponseMsg">
+		<wsdl:part name="parameters" element="tns:searchProductResponse"/>
+    </wsdl:message>
+    
+	<!-- getGroupParents -->
+	<wsdl:message name="GetGroupParentsRequestMsg">
+		<wsdl:part name="parameters" element="tns:getGroupParents"/>
+	</wsdl:message>
+	<wsdl:message name="GetGroupParentsResponseMsg">
+		<wsdl:part name="parameters" element="tns:getGroupParentsResponse"/>
+	</wsdl:message>
+	<!-- getGroupListParents -->
+	<wsdl:message name="GetGroupListParentsRequestMsg">
+		<wsdl:part name="parameters" element="tns:getGroupListParents"/>
+	</wsdl:message>
+	<wsdl:message name="GetGroupListParentsResponseMsg">
+		<wsdl:part name="parameters" element="tns:getGroupListParentsResponse"/>
+	</wsdl:message>
+	
+	<!-- getProductParents -->
+	<wsdl:message name="GetProductParentsRequestMsg">
+		<wsdl:part name="parameters" element="tns:getProductParents"/>
+	</wsdl:message>
+	<wsdl:message name="GetProductParentsResponseMsg">
+		<wsdl:part name="parameters" element="tns:getProductParentsResponse"/>
+	</wsdl:message>
+	<!-- getProductListParents -->
+	<wsdl:message name="GetProductListParentsRequestMsg">
+		<wsdl:part name="parameters" element="tns:getProductListParents"/>
+	</wsdl:message>
+	<wsdl:message name="GetProductListParentsResponseMsg">
+		<wsdl:part name="parameters" element="tns:getProductListParentsResponse"/>
+	</wsdl:message>
+	
+	<!-- getDocumentParents -->
+	<wsdl:message name="GetDocumentParentsRequestMsg">
+		<wsdl:part name="parameters" element="tns:getDocumentParents"/>
+	</wsdl:message>
+	<wsdl:message name="GetDocumentParentsResponseMsg">
+		<wsdl:part name="parameters" element="tns:getDocumentParentsResponse"/>
+	</wsdl:message>
+	<!-- getDocumentListParents -->
+	<wsdl:message name="GetDocumentListParentsRequestMsg">
+		<wsdl:part name="parameters" element="tns:getDocumentListParents"/>
+	</wsdl:message>
+	<wsdl:message name="GetDocumentListParentsResponseMsg">
+		<wsdl:part name="parameters" element="tns:getDocumentListParentsResponse"/>
+	</wsdl:message>
+	
+	<!-- getObjectByAsimOid -->
+	<wsdl:message name="GetObjectByAsimOidRequestMsg">
+		<wsdl:part name="parameters" element="tns:getObjectByAsimOid"/>
+	</wsdl:message>
+	<wsdl:message name="GetObjectByAsimOidResponseMsg">
+		<wsdl:part name="parameters" element="tns:getObjectByAsimOidResponse"/>
+	</wsdl:message>
+	
+	<!-- getDBInfo -->
+	<wsdl:message name="GetDBInfoRequestMsg">
+		<wsdl:part name="parameters" element="tns:getDBInfo"/>
+	</wsdl:message>
+	<wsdl:message name="GetDBInfoResponseMsg">
+		<wsdl:part name="parameters" element="tns:getDBInfoResponse"/>
+	</wsdl:message>
+	
+	<!-- ******************************** Port Type ********************************* -->	
+	<wsdl:portType name="asimCommerceAPIV2PortType">
+		<!-- getShopRoot -->
+		<wsdl:operation name="getShopRoot">
+			<wsdl:input message="tns:ShopRootRequestMsg"/>
+			<wsdl:output message="tns:ShopRootResponseMsg"/>
+		</wsdl:operation>
+		<wsdl:operation name="getShopRootForLangAndMarket">
+			<wsdl:input message="tns:ShopRootForLangAndMarketRequestMsg"/>
+			<wsdl:output message="tns:ShopRootForLangAndMarketResponseMsg"/>
+		</wsdl:operation>
+		<wsdl:operation name="getShopRootList">
+			<wsdl:input message="tns:ShopRootListRequestMsg"/>
+			<wsdl:output message="tns:ShopRootListResponseMsg"/>
+		</wsdl:operation>
+		
+		<!-- getGroupChildren -->
+		<wsdl:operation name="getGroupChildren">
+			<wsdl:input message="tns:GetGroupChildrenRequestMsg"/>
+			<wsdl:output message="tns:GetGroupChildrenResponseMsg"/>
+		</wsdl:operation>
+		
+		<!-- getGroupContent -->
+		<wsdl:operation name="getGroupContent">
+			<wsdl:input message="tns:GetGroupContentRequestMsg"/>
+			<wsdl:output message="tns:GetGroupContentResponseMsg"/>
+		</wsdl:operation>
+		<wsdl:operation name="getGroupContentBySMZ">
+			<wsdl:input message="tns:GetGroupContentBySMZRequestMsg"/>
+			<wsdl:output message="tns:GetGroupContentBySMZResponseMsg"/>
+		</wsdl:operation>
+		<wsdl:operation name="getGroupContentBySMList">
+			<wsdl:input message="tns:GetGroupContentBySMListRequestMsg"/>
+			<wsdl:output message="tns:GetGroupContentBySMListResponseMsg"/>
+		</wsdl:operation>
+		
+		<!-- getGroupTree -->
+		<wsdl:operation name="getGroupTree">
+			<wsdl:input message="tns:GetGroupTreeRequestMsg"/>
+			<wsdl:output message="tns:GetGroupTreeResponseMsg"/>
+		</wsdl:operation>
+		
+		<!-- getGroupFeature -->
+		<wsdl:operation name="getGroupFeature">
+			<wsdl:input message="tns:GetGroupFeatureRequestMsg"/>
+			<wsdl:output message="tns:GetGroupFeatureResponseMsg"/>
+		</wsdl:operation>
+		<wsdl:operation name="getGroupFeatureBySMZ">
+			<wsdl:input message="tns:GetGroupFeatureBySMZRequestMsg"/>
+			<wsdl:output message="tns:GetGroupFeatureBySMZResponseMsg"/>
+		</wsdl:operation>
+		<wsdl:operation name="getGroupFeatureBySMZType">
+			<wsdl:input message="tns:GetGroupFeatureBySMZTypeRequestMsg"/>
+			<wsdl:output message="tns:GetGroupFeatureBySMZTypeResponseMsg"/>
+		</wsdl:operation>
+		<wsdl:operation name="getGroupFeatureBySMList">
+			<wsdl:input message="tns:GetGroupFeatureBySMListRequestMsg"/>
+			<wsdl:output message="tns:GetGroupFeatureBySMListResponseMsg"/>
+		</wsdl:operation>
+		
+		<!-- getGroupListFeature -->
+		<wsdl:operation name="getGroupListFeature">
+			<wsdl:input message="tns:GetGroupListFeatureRequestMsg"/>
+			<wsdl:output message="tns:GetGroupListFeatureResponseMsg"/>
+		</wsdl:operation>
+		<wsdl:operation name="getGroupListFeatureBySMZ">
+			<wsdl:input message="tns:GetGroupListFeatureBySMZRequestMsg"/>
+			<wsdl:output message="tns:GetGroupListFeatureBySMZResponseMsg"/>
+		</wsdl:operation>
+		<wsdl:operation name="getGroupListFeatureBySMList">
+			<wsdl:input message="tns:GetGroupListFeatureBySMListRequestMsg"/>
+			<wsdl:output message="tns:GetGroupListFeatureBySMListResponseMsg"/>
+		</wsdl:operation>
+		
+		<!-- getProductFeature -->
+		<wsdl:operation name="getProductFeature">
+			<wsdl:input message="tns:GetProductFeatureRequestMsg"/>
+			<wsdl:output message="tns:GetProductFeatureResponseMsg"/>
+		</wsdl:operation>
+		<wsdl:operation name="getProductFeatureBySMZ">
+			<wsdl:input message="tns:GetProductFeatureBySMZRequestMsg"/>
+			<wsdl:output message="tns:GetProductFeatureBySMZResponseMsg"/>
+		</wsdl:operation>
+		<wsdl:operation name="getProductFeatureBySMZType">
+			<wsdl:input message="tns:GetProductFeatureBySMZTypeRequestMsg"/>
+			<wsdl:output message="tns:GetProductFeatureBySMZTypeResponseMsg"/>
+		</wsdl:operation>
+		<wsdl:operation name="getProductFeatureBySMList">
+			<wsdl:input message="tns:GetProductFeatureBySMListRequestMsg"/>
+			<wsdl:output message="tns:GetProductFeatureBySMListResponseMsg"/>
+		</wsdl:operation>
+		
+		<!-- getProductListFeature -->
+		<wsdl:operation name="getProductListFeature">
+			<wsdl:input message="tns:GetProductListFeatureRequestMsg"/>
+			<wsdl:output message="tns:GetProductListFeatureResponseMsg"/>
+		</wsdl:operation>
+		<wsdl:operation name="getProductListFeatureBySMZ">
+			<wsdl:input message="tns:GetProductListFeatureBySMZRequestMsg"/>
+			<wsdl:output message="tns:GetProductListFeatureBySMZResponseMsg"/>
+		</wsdl:operation>
+		<wsdl:operation name="getProductListFeatureBySMList">
+			<wsdl:input message="tns:GetProductListFeatureBySMListRequestMsg"/>
+			<wsdl:output message="tns:GetProductListFeatureBySMListResponseMsg"/>
+		</wsdl:operation>
+		
+		<!-- getDocumentFeature -->
+		<wsdl:operation name="getDocumentFeature">
+			<wsdl:input message="tns:GetDocumentFeatureRequestMsg"/>
+			<wsdl:output message="tns:GetDocumentFeatureResponseMsg"/>
+		</wsdl:operation>
+		<wsdl:operation name="getDocumentFeatureBySMZ">
+			<wsdl:input message="tns:GetDocumentFeatureBySMZRequestMsg"/>
+			<wsdl:output message="tns:GetDocumentFeatureBySMZResponseMsg"/>
+		</wsdl:operation>
+		<wsdl:operation name="getDocumentFeatureBySMList">
+			<wsdl:input message="tns:GetDocumentFeatureBySMListRequestMsg"/>
+			<wsdl:output message="tns:GetDocumentFeatureBySMListResponseMsg"/>
+		</wsdl:operation>
+		
+		<!-- getDocumentFeature -->
+		<wsdl:operation name="getDocumentListFeature">
+			<wsdl:input message="tns:GetDocumentListFeatureRequestMsg"/>
+			<wsdl:output message="tns:GetDocumentListFeatureResponseMsg"/>
+		</wsdl:operation>
+		<wsdl:operation name="getDocumentListFeatureBySMZ">
+			<wsdl:input message="tns:GetDocumentListFeatureBySMZRequestMsg"/>
+			<wsdl:output message="tns:GetDocumentListFeatureBySMZResponseMsg"/>
+		</wsdl:operation>
+		<wsdl:operation name="getDocumentListFeatureBySMList">
+			<wsdl:input message="tns:GetDocumentListFeatureBySMListRequestMsg"/>
+			<wsdl:output message="tns:GetDocumentListFeatureBySMListResponseMsg"/>
+		</wsdl:operation>
+		
+		<!-- getSMZ -->
+		<wsdl:operation name="getSMZ">
+			<wsdl:input message="tns:GetSMZRequestMsg"/>
+			<wsdl:output message="tns:GetSMZResponseMsg"/>
+		</wsdl:operation>
+		
+		<!-- getSMZNameByType -->
+		<wsdl:operation name="getSMZNameByType">
+			<wsdl:input message="tns:GetSMZNameByTypeRequestMsg"/>
+			<wsdl:output message="tns:GetSMZNameByTypeResponseMsg"/>
+		</wsdl:operation>
+		
+		<!-- getSMZByType -->
+		<wsdl:operation name="getSMZByType">
+			<wsdl:input message="tns:GetSMZByTypeRequestMsg"/>
+			<wsdl:output message="tns:GetSMZByTypeResponseMsg"/>
+		</wsdl:operation>
+		
+		<!-- getGroupRelations -->
+		<wsdl:operation name="getGroupRelations">
+			<wsdl:input message="tns:GetGroupRelationsRequestMsg"/>
+			<wsdl:output message="tns:GetGroupRelationsResponseMsg"/>
+		</wsdl:operation>
+		<wsdl:operation name="getGroupRelationsForName">
+			<wsdl:input message="tns:GetGroupRelationsForNameRequestMsg"/>
+			<wsdl:output message="tns:GetGroupRelationsForNameResponseMsg"/>
+		</wsdl:operation>
+		
+		<!-- getProductRelations -->
+		<wsdl:operation name="getProductRelations">
+			<wsdl:input message="tns:GetProductRelationsRequestMsg"/>
+			<wsdl:output message="tns:GetProductRelationsResponseMsg"/>
+		</wsdl:operation>
+		<wsdl:operation name="getProductRelationsForName">
+			<wsdl:input message="tns:GetProductRelationsForNameRequestMsg"/>
+			<wsdl:output message="tns:GetProductRelationsForNameResponseMsg"/>
+		</wsdl:operation>
+		
+		<!-- getDocumentRelations -->
+		<wsdl:operation name="getDocumentRelations">
+			<wsdl:input message="tns:GetDocumentRelationsRequestMsg"/>
+			<wsdl:output message="tns:GetDocumentRelationsResponseMsg"/>
+		</wsdl:operation>
+		<wsdl:operation name="getDocumentRelationsForName">
+			<wsdl:input message="tns:GetDocumentRelationsForNameRequestMsg"/>
+			<wsdl:output message="tns:GetDocumentRelationsForNameResponseMsg"/>
+		</wsdl:operation>
+		
+		<!-- searchProduct -->
+		<wsdl:operation name="searchProduct">
+			<wsdl:input message="tns:SearchProductRequestMsg"/>
+			<wsdl:output message="tns:SearchProductResponseMsg"/>
+		</wsdl:operation>
+		
+		<!-- getGroupParents -->
+		<wsdl:operation name="getGroupParents">
+			<wsdl:input message="tns:GetGroupParentsRequestMsg"/>
+			<wsdl:output message="tns:GetGroupParentsResponseMsg"/>
+		</wsdl:operation>
+		
+		<!-- getGroupListParents -->
+		<wsdl:operation name="getGroupListParents">
+			<wsdl:input message="tns:GetGroupListParentsRequestMsg"/>
+			<wsdl:output message="tns:GetGroupListParentsResponseMsg"/>
+		</wsdl:operation>
+		
+		<!-- getProductParents -->
+		<wsdl:operation name="getProductParents">
+			<wsdl:input message="tns:GetProductParentsRequestMsg"/>
+			<wsdl:output message="tns:GetProductParentsResponseMsg"/>
+		</wsdl:operation>
+		
+		<!-- getProductListParents -->
+		<wsdl:operation name="getProductListParents">
+			<wsdl:input message="tns:GetProductListParentsRequestMsg"/>
+			<wsdl:output message="tns:GetProductListParentsResponseMsg"/>
+		</wsdl:operation>
+		
+		<!-- getDocumentParents -->
+		<wsdl:operation name="getDocumentParents">
+			<wsdl:input message="tns:GetDocumentParentsRequestMsg"/>
+			<wsdl:output message="tns:GetDocumentParentsResponseMsg"/>
+		</wsdl:operation>
+		
+		<!-- getDocumentListParents -->
+		<wsdl:operation name="getDocumentListParents">
+			<wsdl:input message="tns:GetDocumentListParentsRequestMsg"/>
+			<wsdl:output message="tns:GetDocumentListParentsResponseMsg"/>
+		</wsdl:operation>
+		
+		<!-- getObjectByAsimOid -->
+		<wsdl:operation name="getObjectByAsimOid">
+			<wsdl:input message="tns:GetObjectByAsimOidRequestMsg"/>
+			<wsdl:output message="tns:GetObjectByAsimOidResponseMsg"/>
+		</wsdl:operation>
+		
+		<!-- getDBInfo -->
+		<wsdl:operation name="getDBInfo">
+			<wsdl:input message="tns:GetDBInfoRequestMsg"/>
+			<wsdl:output message="tns:GetDBInfoResponseMsg"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	
+	<!-- ******************************** Binding ********************************* -->
+	<wsdl:binding name="asimCommerceAPIV2Binding" type="tns:asimCommerceAPIV2PortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<!-- getShopRoot -->
+		<wsdl:operation name="getShopRoot">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getShopRoot" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getShopRootForLangAndMarket">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getShopRootForLangAndMarket" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getShopRootList">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getShopRootList" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		
+		<!-- getGroupChildren -->
+		<wsdl:operation name="getGroupChildren">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getGroupChildren" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		
+		<!-- getGroupContent -->
+		<wsdl:operation name="getGroupContent">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getGroupContent" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getGroupContentBySMZ">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getGroupContentBySMZ" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getGroupContentBySMList">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getGroupContentBySMList" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		
+		<!-- getGroupTree -->
+		<wsdl:operation name="getGroupTree">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getGroupTree" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		
+		<!-- getGroupFeature -->
+		<wsdl:operation name="getGroupFeature">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getGroupFeature" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getGroupFeatureBySMZ">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getGroupFeatureBySMZ" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getGroupFeatureBySMZType">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getGroupFeatureBySMZType" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getGroupFeatureBySMList">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getGroupFeatureBySMList" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		
+		<!-- getGroupListFeature -->
+		<wsdl:operation name="getGroupListFeature">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getGroupListFeature" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getGroupListFeatureBySMZ">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getGroupListFeatureBySMZ" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getGroupListFeatureBySMList">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getGroupListFeatureBySMList" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		
+		<!-- getProductFeature -->
+		<wsdl:operation name="getProductFeature">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getProductFeature" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getProductFeatureBySMZ">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getProductFeatureBySMZ" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getProductFeatureBySMZType">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getProductFeatureBySMZType" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getProductFeatureBySMList">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getProductFeatureBySMList" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		
+		<!-- getProductListFeature -->
+		<wsdl:operation name="getProductListFeature">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getProductListFeature" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getProductListFeatureBySMZ">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getProductListFeatureBySMZ" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getProductListFeatureBySMList">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getProductListFeatureBySMList" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		
+		<!-- getDocumentFeature -->
+		<wsdl:operation name="getDocumentFeature">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getDocumentFeature" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getDocumentFeatureBySMZ">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getDocumentFeatureBySMZ" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getDocumentFeatureBySMList">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getDocumentFeatureBySMList" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		
+		<!-- getDocumentListFeature -->
+		<wsdl:operation name="getDocumentListFeature">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getDocumentListFeature" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getDocumentListFeatureBySMZ">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getDocumentListFeatureBySMZ" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getDocumentListFeatureBySMList">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getDocumentListFeatureBySMList" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		
+		<!-- getSMZ -->
+		<wsdl:operation name="getSMZ">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getSMZ" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		
+		<!-- getSMZNameByType -->
+		<wsdl:operation name="getSMZNameByType">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getSMZNameByType" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		
+		<!-- getSMZByType -->
+		<wsdl:operation name="getSMZByType">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getSMZByType" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		
+		<!-- getGroupRelations -->
+		<wsdl:operation name="getGroupRelations">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getGroupRelations" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getGroupRelationsForName">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getGroupRelationsForName" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		
+		<!-- getProductRelations -->
+		<wsdl:operation name="getProductRelations">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getProductRelations" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getProductRelationsForName">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getProductRelationsForName" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		
+		<!-- getDocumentRelations -->
+		<wsdl:operation name="getDocumentRelations">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getDocumentRelations" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getDocumentRelationsForName">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getDocumentRelationsForName" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		
+		<!-- searchProduct -->
+		<wsdl:operation name="searchProduct">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#searchProduct" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		
+		<!-- getGroupParents -->
+		<wsdl:operation name="getGroupParents">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getGroupParents" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		
+		<!-- getGroupListParents -->
+		<wsdl:operation name="getGroupListParents">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getGroupListParents" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		
+		<!-- getProductParents -->
+		<wsdl:operation name="getProductParents">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getProductParents" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		
+		<!-- getProductParents -->
+		<wsdl:operation name="getProductListParents">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getProductListParents" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		
+		<!-- getDocumentParents -->
+		<wsdl:operation name="getDocumentParents">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getDocumentParents" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		
+		<!-- getDocumentParents -->
+		<wsdl:operation name="getDocumentListParents">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getDocumentListParents" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>		
+		
+		<!-- getObjectByAsimOid -->
+		<wsdl:operation name="getObjectByAsimOid">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getObjectByAsimOid" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		
+		<!-- getDBInfo -->
+		<wsdl:operation name="getDBInfo">
+			<soap:operation soapAction="http://www.asimcommerce.at/API/V2#getDBInfo" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	
+	<!-- ******************************** Service ********************************* -->
+	<wsdl:service name="asimCommerceProduction">
+		<wsdl:port name="asimCommerce_Production" binding="tns:asimCommerceAPIV2Binding">
+			<soap:address location="http://localhost/dataConnectorV2/server/dataConnector_DLW_handler.php?db=production"/>
+		</wsdl:port>
+	</wsdl:service>
+		<wsdl:service name="asimCommerceStaging">
+		<wsdl:port name="asimCommerce_Staging" binding="tns:asimCommerceAPIV2Binding">
+			<soap:address location="http://localhost/dataConnectorV2/server/dataConnector_DLW_handler.php?db=staging"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

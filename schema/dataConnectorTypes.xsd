@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+			xmlns:tns="http://www.ms3commerce.at/API/V2/service/V4.8.0" 
+			targetNamespace="http://www.ms3commerce.at/API/V2/service/V4.8.0" 
+			elementFormDefault="qualified" 
+			attributeFormDefault="unqualified">
+	<xsd:complexType name="IDList">
+		<xsd:sequence>
+			<xsd:element name="ids" type="xsd:int" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FeatureList">
+		<xsd:sequence>
+			<xsd:element name="feature" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FeatureValue">
+		<xsd:sequence>
+			<xsd:element name="name" type="xsd:string"/>
+			<xsd:element name="title" type="xsd:string"/>
+			<xsd:element name="contentHtml" type="xsd:string"/>
+			<xsd:element name="contentPlain" type="xsd:string"/>
+			<xsd:element name="contentNumber" type="xsd:float" minOccurs="0"/>
+			<xsd:element name="documentIds" type="tns:IDList"/>
+			<xsd:element name="info" type="xsd:string"/>
+			<xsd:element name="unitToken" type="xsd:string"/>
+			<xsd:element name="prefix" type="xsd:string"/>
+			<xsd:element name="dimension" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="Group">
+		<xsd:sequence>
+			<xsd:element name="groupId" type="xsd:int"/>
+			<xsd:element name="asimOid" type="xsd:string"/>
+			<xsd:element name="auxName" type="xsd:string"/>
+			<xsd:element name="name" type="xsd:string"/>
+			<xsd:element name="features" type="tns:FeatureValue" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="Product">
+		<xsd:sequence>
+			<xsd:element name="productId" type="xsd:int"/>
+			<xsd:element name="asimOid" type="xsd:string"/>
+			<xsd:element name="auxName" type="xsd:string"/>
+			<xsd:element name="name" type="xsd:string"/>
+			<xsd:element name="features" type="tns:FeatureValue" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="Document">
+		<xsd:sequence>
+			<xsd:element name="documentId" type="xsd:int"/>
+			<xsd:element name="asimOid" type="xsd:string"/>
+			<xsd:element name="auxName" type="xsd:string"/>
+			<xsd:element name="name" type="xsd:string"/>
+			<xsd:element name="filePath" type="xsd:string"/>
+			<xsd:element name="features" type="tns:FeatureValue" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ShopRoot">
+		<xsd:sequence>
+			<xsd:element name="shopId" type="xsd:int"/>
+			<xsd:element name="marketId" type="xsd:int"/>
+			<xsd:element name="languageId" type="xsd:int"/>
+			<xsd:element name="rootGroupId" type="xsd:int"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ShopRootList">
+		<xsd:sequence>
+			<xsd:element name="shopRoots" type="tns:ShopRoot" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GroupChildren">
+		<xsd:sequence>
+			<xsd:element name="groupId" type="xsd:int"/>
+			<xsd:element name="subGroupIds" type="tns:IDList"/>
+			<xsd:element name="productIds" type="tns:IDList"/>
+			<xsd:element name="documentIds" type="tns:IDList"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GroupContent">
+		<xsd:sequence>
+			<xsd:element name="groupId" type="xsd:int"/>
+			<xsd:element name="groups" type="tns:Group" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="products" type="tns:Product" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="documents" type="tns:Document" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GroupTree">
+		<xsd:sequence>
+			<xsd:element name="groupId" type="xsd:int"/>
+			<xsd:element name="children" type="tns:GroupTree" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GroupList">
+		<xsd:sequence>
+			<xsd:element name="groups" type="tns:Group" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ProductList">
+		<xsd:sequence>
+			<xsd:element name="products" type="tns:Product" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="DocumentList">
+		<xsd:sequence>
+			<xsd:element name="documents" type="tns:Document" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="SMZHierarchyType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="FGF"/>
+			<xsd:enumeration value="SF"/>
+			<xsd:enumeration value="RGF"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="SMZFeature">
+		<xsd:sequence>
+			<xsd:element name="featureName" type="xsd:string"/>
+			<xsd:element name="displayType" type="xsd:string"/>
+			<xsd:element name="filterType" type="xsd:string"/>
+			<xsd:element name="usePrefix" type="xsd:boolean"/>
+			<xsd:element name="useUnit" type="xsd:boolean"/>
+			<xsd:element name="useTitle" type="xsd:boolean"/>
+			<xsd:element name="groupChange" type="xsd:boolean"/>
+			<xsd:element name="selectionHelp" type="xsd:boolean"/>
+			<xsd:element name="isNode" type="xsd:boolean"/>
+			<xsd:element name="level" type="xsd:int"/>
+			<xsd:element name="subGroup" type="xsd:string"/>
+			<xsd:element name="groupTitle" type="xsd:string"/>
+			<xsd:element name="isComposedGroup" type="xsd:boolean"/>
+			<xsd:element name="childFeatures" type="tns:SMZFeature" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="SMZFeatureHierarchy">
+		<xsd:sequence>
+			<xsd:element name="hierarchy" type="tns:SMZHierarchyType"/>
+			<xsd:element name="SMZFeatures" type="tns:SMZFeature" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="SMZ">
+		<xsd:sequence>
+			<xsd:element name="name" type="xsd:string"/>
+			<xsd:element name="type" type="xsd:string"/>
+			<xsd:element name="features" type="tns:SMZFeatureHierarchy" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="ObjectType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Group"/>
+			<xsd:enumeration value="Product"/>
+			<xsd:enumeration value="Document"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="Relation">
+		<xsd:sequence>
+			<xsd:element name="name" type="xsd:string"/>
+			<xsd:element name="amount" type="xsd:double"/>
+			<xsd:element name="position" type="xsd:string"/>
+			<xsd:element name="destinationId" type="xsd:int"/>
+			<xsd:element name="destinationType" type="tns:ObjectType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="RelationList">
+		<xsd:sequence>
+			<xsd:element name="relation" type="tns:Relation" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="CompType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="EQUALS"/>
+			<xsd:enumeration value="CONTAINS"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="SearchCriteria">
+		<xsd:sequence>
+			<xsd:element name="feature" type="xsd:string"/>
+			<xsd:element name="value" type="xsd:string"/>
+			<xsd:element name="compType" type="tns:CompType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="SearchCriteriaList">
+		<xsd:sequence>
+			<xsd:element name="searchCriteria" type="tns:SearchCriteria" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="SearchType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="AND"/>
+			<xsd:enumeration value="OR"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="AsimObject">
+		<xsd:sequence>
+			<xsd:element name="type" type="tns:ObjectType"/>
+			<xsd:element name="id" type="xsd:int"/>
+			<xsd:element name="asimOid" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="DBType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="PRODUCTION"/>
+			<xsd:enumeration value="STAGING"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="DBInfo">
+		<xsd:sequence>
+			<xsd:element name="dbName" type="xsd:string"/>
+			<xsd:element name="dbAlias" type="xsd:string"/>
+			<xsd:element name="dbType" type="tns:DBType"/>
+			<xsd:element name="serviceVersion" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ElementParents">
+		<xsd:sequence>
+			<xsd:element name="elementId" type="xsd:int"/>
+			<xsd:element name="parents" type="tns:IDList"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ParentList">
+		<xsd:sequence>
+			<xsd:element name="elementParents" type="tns:ElementParents" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

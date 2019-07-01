@@ -1,0 +1,720 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+			xmlns:tns="http://www.ms3commerce.at/API/V2/service/V4.8.0" 
+			targetNamespace="http://www.ms3commerce.at/API/V2/service/V4.8.0" 
+			elementFormDefault="qualified" 
+			attributeFormDefault="unqualified">
+	<xsd:include schemaLocation="dataConnectorTypes.xsd"/>
+  
+	<!-- getShopRoot -->
+	<xsd:element name="getShopRoot">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="shopId" type="xsd:int"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getShopRootResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="shopRoot" type="tns:ShopRoot" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getShopRootForLangAndMarket">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="languageId" type="xsd:int"/>
+				<xsd:element name="marketId" type="xsd:int"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getShopRootForLangAndMarketResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="shopRoot" type="tns:ShopRoot" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getShopRootList">
+		<xsd:complexType>
+			<xsd:sequence/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getShopRootListResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="shopRootList" type="tns:ShopRootList" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+  
+	<!-- getGroupChildren -->
+	<xsd:element name="getGroupChildren">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="groupId" type="xsd:int"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getGroupChildrenResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="groupChildren" type="tns:GroupChildren" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+  
+	<!-- getGroupContent -->
+	<xsd:element name="getGroupContent">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="groupId" type="xsd:int"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getGroupContentResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="groupContent" type="tns:GroupContent" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getGroupContentBySMZ">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="groupId" type="xsd:int"/>
+				<xsd:element name="smzName" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getGroupContentBySMZResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="groupContent" type="tns:GroupContent" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getGroupContentBySMList">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="groupId" type="xsd:int"/>
+				<xsd:element name="features" type="tns:FeatureList"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getGroupContentBySMListResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="groupContent" type="tns:GroupContent" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+  
+	<!-- getGroupTree -->
+	<xsd:element name="getGroupTree">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="groupId" type="xsd:int"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getGroupTreeResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="groupTree" type="tns:GroupTree" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+  
+	<!-- getGroupFeature -->
+	<xsd:element name="getGroupFeature">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="groupId" type="xsd:int"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getGroupFeatureResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="group" type="tns:Group" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getGroupFeatureBySMZ">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="groupId" type="xsd:int"/>
+				<xsd:element name="smzName" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getGroupFeatureBySMZResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="group" type="tns:Group" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getGroupFeatureBySMZType">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="groupId" type="xsd:int"/>
+				<xsd:element name="smzType" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getGroupFeatureBySMZTypeResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="group" type="tns:Group" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getGroupFeatureBySMList">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="groupId" type="xsd:int"/>
+				<xsd:element name="features" type="tns:FeatureList"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getGroupFeatureBySMListResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="group" type="tns:Group" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+  
+	<!-- getGroupListFeature -->
+	<xsd:element name="getGroupListFeature">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="groupIds" type="tns:IDList"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getGroupListFeatureResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="groups" type="tns:GroupList" minOccurs="1" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getGroupListFeatureBySMZ">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="groupIds" type="tns:IDList"/>
+				<xsd:element name="smzName" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getGroupListFeatureBySMZResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="groups" type="tns:GroupList" minOccurs="1" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getGroupListFeatureBySMList">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="groupIds" type="tns:IDList"/>
+				<xsd:element name="features" type="tns:FeatureList"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getGroupListFeatureBySMListResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="groups" type="tns:GroupList" minOccurs="1" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+  
+	<!-- getProductFeature -->
+	<xsd:element name="getProductFeature">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="productId" type="xsd:int"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getProductFeatureResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="product" type="tns:Product" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getProductFeatureBySMZ">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="productId" type="xsd:int"/>
+				<xsd:element name="smzName" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getProductFeatureBySMZResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="product" type="tns:Product" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getProductFeatureBySMZType">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="productId" type="xsd:int"/>
+				<xsd:element name="smzType" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getProductFeatureBySMZTypeResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="product" type="tns:Product" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getProductFeatureBySMList">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="productId" type="xsd:int"/>
+				<xsd:element name="features" type="tns:FeatureList"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getProductFeatureBySMListResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="product" type="tns:Product" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+  
+	<!-- getProductListFeature -->
+	<xsd:element name="getProductListFeature">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="productIds" type="tns:IDList"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getProductListFeatureResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="products" type="tns:ProductList" minOccurs="1" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getProductListFeatureBySMZ">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="productIds" type="tns:IDList"/>
+				<xsd:element name="smzName" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getProductListFeatureBySMZResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="products" type="tns:ProductList" minOccurs="1" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getProductListFeatureBySMList">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="productIds" type="tns:IDList"/>
+				<xsd:element name="features" type="tns:FeatureList"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getProductListFeatureBySMListResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="products" type="tns:ProductList" minOccurs="1" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+  
+	<!-- getDocumentFeature -->
+	<xsd:element name="getDocumentFeature">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="documentId" type="xsd:int"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getDocumentFeatureResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="document" type="tns:Document" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getDocumentFeatureBySMZ">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="documentId" type="xsd:int"/>
+				<xsd:element name="smzName" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getDocumentFeatureBySMZResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="document" type="tns:Document" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getDocumentFeatureBySMList">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="documentId" type="xsd:int"/>
+				<xsd:element name="features" type="tns:FeatureList"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getDocumentFeatureBySMListResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="document" type="tns:Document" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+  
+	<!-- getDocumentListFeature -->
+	<xsd:element name="getDocumentListFeature">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="documentIds" type="tns:IDList"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getDocumentListFeatureResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="documents" type="tns:DocumentList" minOccurs="1" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getDocumentListFeatureBySMZ">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="documentIds" type="tns:IDList"/>
+				<xsd:element name="smzName" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getDocumentListFeatureBySMZResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="documents" type="tns:DocumentList" minOccurs="1" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getDocumentListFeatureBySMList">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="documentIds" type="tns:IDList"/>
+				<xsd:element name="features" type="tns:FeatureList"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getDocumentListFeatureBySMListResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="documents" type="tns:DocumentList" minOccurs="1" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+  
+	<!-- getSMZ -->
+	<xsd:element name="getSMZ">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="smzName" type="xsd:string"/>
+				<xsd:element name="shopId" type="xsd:integer"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getSMZResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="smz" type="tns:SMZ" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+  
+	<!-- getSMZNameByType -->
+	<xsd:element name="getSMZNameByType">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="groupId" type="xsd:int" minOccurs="0" maxOccurs="1"/>
+				<xsd:element name="productId" type="xsd:int" minOccurs="0" maxOccurs="1"/>
+				<xsd:element name="smzType" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getSMZNameByTypeResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="smzName" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+  
+	<!-- getSMZByType -->
+	<xsd:element name="getSMZByType">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="groupId" type="xsd:int" minOccurs="0" maxOccurs="1"/>
+				<xsd:element name="productId" type="xsd:int" minOccurs="0" maxOccurs="1"/>
+				<xsd:element name="smzType" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getSMZByTypeResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="smz" type="tns:SMZ" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+  
+	<!-- getGroupRelations -->
+	<xsd:element name="getGroupRelations">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="groupId" type="xsd:int"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getGroupRelationsResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="relationList" type="tns:RelationList" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getGroupRelationsForName">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="groupId" type="xsd:int"/>
+				<xsd:element name="relationName" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getGroupRelationsForNameResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="relationList" type="tns:RelationList" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+  
+	<!-- getProductRelations -->
+	<xsd:element name="getProductRelations">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="productId" type="xsd:int"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getProductRelationsResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="relationList" type="tns:RelationList" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getProductRelationsForName">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="productId" type="xsd:int"/>
+				<xsd:element name="relationName" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getProductRelationsForNameResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="relationList" type="tns:RelationList" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+  
+	<!-- getDocumentRelations -->
+	<xsd:element name="getDocumentRelations">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="documentId" type="xsd:int"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getDocumentRelationsResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="relationList" type="tns:RelationList" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getDocumentRelationsForName">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="documentId" type="xsd:int"/>
+				<xsd:element name="relationName" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getDocumentRelationsForNameResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="relationList" type="tns:RelationList" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+  
+	<!-- searchProduct -->
+	<xsd:element name="searchProduct">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="searchCriterias" type="tns:SearchCriteriaList"/>
+				<xsd:element name="shopId" type="xsd:integer"/>
+				<xsd:element name="type" type="tns:SearchType"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="searchProductResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="productIds" type="tns:IDList" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+  
+	<!-- getGroupParents -->
+	<xsd:element name="getGroupParents">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="groupId" type="xsd:int"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getGroupParentsResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="parents" type="tns:ElementParents" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getGroupListParents">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="groupIds" type="tns:IDList"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getGroupListParentsResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="parents" type="tns:ParentList" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+  
+	<!-- getProductParents -->
+	<xsd:element name="getProductParents">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="productId" type="xsd:int"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getProductParentsResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="parents" type="tns:ElementParents" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getProductListParents">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="productIds" type="tns:IDList"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getProductListParentsResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="parents" type="tns:ParentList" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+  
+	<!-- getDocumentParents -->
+	<xsd:element name="getDocumentParents">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="documentId" type="xsd:int"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getDocumentParentsResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="parents" type="tns:ElementParents" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getDocumentListParents">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="documentIds" type="tns:IDList"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getDocumentListParentsResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="parents" type="tns:ParentList" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+  
+	<!-- getObjectByAsimOid -->
+	<xsd:element name="getObjectByAsimOid">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="asimOid" type="xsd:string"/>
+				<xsd:element name="shopId" type="xsd:int"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getObjectByAsimOidResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="object" type="tns:AsimObject" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+  
+	<!-- getDBId -->
+	<xsd:element name="getDBInfo">
+		<xsd:complexType>
+			<xsd:sequence/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getDBInfoResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="dbInfo" type="tns:DBInfo"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>
