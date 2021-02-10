@@ -1,5 +1,5 @@
 {
-    "name": "ms3commerce/dataConnectorV2",
+    "name": "ms3commerce/dataconnectorv2",
     "description": "mS3 Commerce dataConnector API",
     "authors": [
         {
@@ -9,7 +9,7 @@
     ],
     "require": {
         "php": "^5.3.0 || 7.0 - 7.4",
-        "ms3commerce/dataTransfer": "6.3.*"
+        "ms3commerce/datatransfer": "6.4.*"
     }
 }
 
