@@ -912,7 +912,7 @@ class dataConnectorImpl {
 			"FROM %s t INNER JOIN Menu m ON m.%sId = t.Id ".
 			"WHERE t.AsimOid = $aoid AND m.LanguageId = $lang AND m.MarketId = $market";
 		
-		$g = sprintf($queryTmpl, "g", "Groups", "Group");
+		$g = sprintf($queryTmpl, "g", "`Groups`", "Group");
 		$p = sprintf($queryTmpl, "p", "Product", "Product");
 		$d = sprintf($queryTmpl, "d", "Document", "Document");
 		
@@ -967,7 +967,7 @@ class dataConnectorImpl {
 	private function loadGroup($groupId)
 	{
 		$groupId = intval($groupId);
-		$res = $this->db->exec_SELECTquery("auxiliaryName,name,asimOid", "Groups", "id=" . $groupId);
+		$res = $this->db->exec_SELECTquery("auxiliaryName,name,asimOid", "`Groups`", "id=" . $groupId);
 		$this->checkDBRes($res, __FUNCTION__, __LINE__);
 		$row = $this->db->sql_fetch_assoc($res);
 		$this->db->sql_free_result($res);
