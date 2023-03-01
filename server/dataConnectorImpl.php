@@ -462,7 +462,7 @@ class dataConnectorImpl {
 					case 3: $rel->destinationType = ObjectType::Document; break;
 					default:
 						// Skip
-						continue;
+						continue 2;
 				}
 
 				$relList->relation[] = $rel;
