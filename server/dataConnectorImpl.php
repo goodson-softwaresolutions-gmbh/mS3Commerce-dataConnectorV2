@@ -61,6 +61,9 @@ class dataConnectorImpl {
 			$ret->languageId = $row['LanguageId'];
 			$ret->marketId = $row['MarketId'];
 			$ret->rootGroupId = $row['RootGroupId'];
+			$ret->exportDate = $row['BaseExportDate'];
+			$ret->importDate = $row['ImportDate'];
+			$ret->uploadDate = $row['UploadDate'];
 			return $ret;
 		}
 	}
@@ -83,6 +86,9 @@ class dataConnectorImpl {
 			$ret->languageId = $row['LanguageId'];
 			$ret->marketId = $row['MarketId'];
 			$ret->rootGroupId = $row['RootGroupId'];
+			$ret->exportDate = $row['BaseExportDate'];
+			$ret->importDate = $row['ImportDate'];
+			$ret->uploadDate = $row['UploadDate'];
 			return $ret;
 		}
 	}
@@ -98,6 +104,9 @@ class dataConnectorImpl {
 			$ret->languageId = $row['LanguageId'];
 			$ret->marketId = $row['MarketId'];
 			$ret->rootGroupId = $row['RootGroupId'];
+			$ret->exportDate = $row['BaseExportDate'];
+			$ret->importDate = $row['ImportDate'];
+			$ret->uploadDate = $row['UploadDate'];
 			$retList->shops[] = $ret;
 		}
 		$this->db->sql_free_result($res);

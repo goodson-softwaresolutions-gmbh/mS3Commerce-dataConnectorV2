@@ -210,6 +210,23 @@ class ShopRoot {
 	 **/
 	var $shopId;
 
+	/**
+	 * @access public
+	 * @var string
+	 */
+	var $exportDate;
+
+	/**
+	 * @access public
+	 * @var string
+	 */
+	var $importDate;
+
+	/**
+	 * @access public
+	 * @var string
+	 */
+	var $uploadDate;
 }
 
 class ShopRootList {
